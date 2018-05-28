@@ -17,7 +17,8 @@ def get_movie_id(search):
         int: Movie ID for first search result found.
     """
     formatted_search = search.replace(" ", "%20")
-    url = "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&query=" + formatted_search
+    url = ("https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY +
+    "&query=" + formatted_search)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -35,7 +36,8 @@ def get_original_title(movie_name):
         str: Movie exact title.
     """
     movie_id = get_movie_id(movie_name)
-    url = "https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key=" + API_KEY
+    url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
+    + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -53,7 +55,8 @@ def get_overview(movie_name):
         str: Movie Overview.
     """
     movie_id = get_movie_id(movie_name)
-    url = "https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key=" + API_KEY
+    url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
+    + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -71,7 +74,8 @@ def get_poster_img(movie_name):
         str: Movie poster image url.
     """
     movie_id = get_movie_id(movie_name)
-    url = "https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key=" + API_KEY
+    url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
+    + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())

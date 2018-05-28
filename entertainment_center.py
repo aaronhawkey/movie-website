@@ -26,5 +26,3 @@ tmdb_api.get_poster_img(movie[2]),
 #Formating and sending data to fresh_tomatoes
 created_movies =[harry_potter, lord_of_the_rings, gangs_of_NY]
 fresh_tomatoes.open_movies_page(created_movies)
-
-#print(tmdb_api.get_poster_img("harry potter"))
