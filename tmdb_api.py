@@ -2,7 +2,7 @@ import urllib.request
 import json
 
 
-#TMDB Api Key
+# TMDB Api Key
 API_KEY = "c37b1d1c084969689e9b52d21244dbeb"
 
 
@@ -18,7 +18,7 @@ def get_movie_id(search):
     """
     formatted_search = search.replace(" ", "%20")
     url = ("https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY +
-    "&query=" + formatted_search)
+           "&query=" + formatted_search)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -37,7 +37,7 @@ def get_original_title(movie_name):
     """
     movie_id = get_movie_id(movie_name)
     url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
-    + API_KEY)
+           + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -56,7 +56,7 @@ def get_overview(movie_name):
     """
     movie_id = get_movie_id(movie_name)
     url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
-    + API_KEY)
+           + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
@@ -75,7 +75,7 @@ def get_poster_img(movie_name):
     """
     movie_id = get_movie_id(movie_name)
     url = ("https://api.themoviedb.org/3/movie/" + str(movie_id) + "?api_key="
-    + API_KEY)
+           + API_KEY)
 
     with urllib.request.urlopen(url) as response:
         data = json.loads(response.read())
